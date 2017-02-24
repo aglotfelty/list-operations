@@ -56,7 +56,7 @@ def custom_append(input_list, value):
         True
 
     """
-    input_list += [value]
+    input_list[-1:] = [input_list[-1], value]
 
 
 def custom_extend(input_list, second_list):
@@ -75,7 +75,9 @@ def custom_extend(input_list, second_list):
 
     """
 
-    input_list += second_list
+    input_list[:] = input_list + second_list
+
+    # input_list += second_list
 
 
 def custom_insert(input_list, index, value):
@@ -92,8 +94,8 @@ def custom_insert(input_list, index, value):
         True
 
     """
-
-    pass
+    input_list[index-1: index] = [input_list[index-1], value]
+    
 
 
 def custom_remove(input_list, value):
